@@ -120,7 +120,7 @@ if canvas_result.image_data is not None:
     gray = np.mean(np.array(img_pil.convert("L")))
 
     if gray > 250:
-        st.info("Draw something first 👀")
+        st.info("Draw something first")
     else:
         # Do NOT show the input image again when drawing
         predict_and_display(img_pil, show_input=False)
