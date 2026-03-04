@@ -10,7 +10,6 @@ from preprocess import preprocess_image
 # ===============================
 st.set_page_config(
     page_title="Handwritten Character Recognition",
-    page_icon="✍️",
     layout="wide"  # full-screen width
 )
 
@@ -20,7 +19,7 @@ st.set_page_config(
 st.markdown(
     """
     <div style='text-align: center;'>
-        <h1>✍️ Handwritten Character Recognition</h1>
+        <h1>Handwritten Character Recognition</h1>
         <p style='font-size:18px;'>Upload an image or draw a character below.<br>
         <b>Black stroke on white background</b></p>
     </div>
@@ -39,7 +38,7 @@ def load_assets():
     return model, class_names
 
 model, class_names = load_assets()
-st.success(f"✅ Model loaded ({len(class_names)} classes ready)")
+st.success(f"Model loaded ({len(class_names)} classes ready)")
 
 # ===============================
 # PREDICTION FUNCTION
@@ -51,7 +50,7 @@ def predict_and_display(img_pil, true_label=None, show_input=True):
 
     img_array = preprocess_image(img_pil)
     if img_array is None:
-        st.warning("⚠️ No visible strokes detected.")
+        st.warning("No visible strokes detected.")
         return
 
     predictions = model.predict(img_array)[0]
@@ -60,7 +59,7 @@ def predict_and_display(img_pil, true_label=None, show_input=True):
     confidence = predictions[predicted_index] * 100
 
     # Prediction display
-    st.subheader("🧠 Prediction")
+    st.subheader("Prediction")
     if confidence < 50:
         st.warning("Low confidence — unclear input")
     else:
@@ -74,7 +73,7 @@ def predict_and_display(img_pil, true_label=None, show_input=True):
         st.progress(float(predictions[idx]))
 
     # Metrics section
-    st.subheader("📈 Metrics")
+    st.subheader("Metrics")
     st.write(f"- Confidence: {confidence:.2f}%")
     if true_label is not None:
         accuracy = 1.0 if predicted_label == true_label else 0.0
@@ -103,7 +102,7 @@ if uploaded_file is not None:
 # ===============================
 # DRAW CANVAS
 # ===============================
-st.subheader("✏️ Draw a Character")
+st.subheader("Draw a Character")
 canvas_result = st_canvas(
     fill_color="black",
     stroke_width=15,
