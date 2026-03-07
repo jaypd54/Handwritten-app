@@ -1,0 +1,356 @@
+/* ============================================================
+   HANDWRITTEN CHARACTER RECOGNITION — Dark Theme
+   Aesthetic: Ink Analysis Lab — precise, dark, professional
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --bg-primary:    #0b0c10;
+  --bg-secondary:  #12141a;
+  --bg-card:       #161820;
+  --bg-input:      #1c1e27;
+  --border:        #2a2d3a;
+  --border-accent: #c5a84e;
+  --accent:        #c5a84e;
+  --accent-dim:    rgba(197, 168, 78, 0.12);
+  --accent-glow:   rgba(197, 168, 78, 0.25);
+  --text-primary:  #e8e5dc;
+  --text-secondary:#9a9891;
+  --text-muted:    #5a5850;
+  --success:       #4a9e6b;
+  --warning:       #c5884e;
+  --danger:        #9e4a4a;
+  --font-display:  'Cormorant Garamond', serif;
+  --font-mono:     'JetBrains Mono', monospace;
+  --font-body:     'DM Sans', sans-serif;
+}
+
+/* ── Base Reset ── */
+html, body, [class*="css"] {
+  font-family: var(--font-body) !important;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.stApp {
+  background-color: var(--bg-primary) !important;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(197, 168, 78, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(197, 168, 78, 0.03) 0%, transparent 50%);
+}
+
+/* ── Main container ── */
+.main .block-container {
+  padding: 2.5rem 3rem 4rem !important;
+  max-width: 1100px !important;
+}
+
+/* ── Header ── */
+.app-header {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.app-header::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--accent);
+  margin: 0 auto 1.5rem;
+}
+
+.app-header h1 {
+  font-family: var(--font-display) !important;
+  font-size: 3rem !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.08em !important;
+  color: var(--text-primary) !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.app-header p {
+  font-family: var(--font-mono) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+}
+
+/* ── Section Labels ── */
+h2, h3, .stSubheader {
+  font-family: var(--font-mono) !important;
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: var(--accent) !important;
+  border: none !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 0 !important;
+}
+
+/* ── Divider ── */
+hr {
+  border: none !important;
+  border-top: 1px solid var(--border) !important;
+  margin: 2rem 0 !important;
+}
+
+/* ── File Uploader ── */
+[data-testid="stFileUploader"] {
+  background: var(--bg-card) !important;
+  border: 1px dashed var(--border) !important;
+  border-radius: 8px !important;
+  padding: 1.5rem !important;
+  transition: border-color 0.2s ease !important;
+}
+
+[data-testid="stFileUploader"]:hover {
+  border-color: var(--accent) !important;
+}
+
+[data-testid="stFileUploader"] label {
+  font-family: var(--font-mono) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: var(--text-secondary) !important;
+}
+
+[data-testid="stFileUploadDropzone"] {
+  background: transparent !important;
+  border: none !important;
+}
+
+[data-testid="stFileUploadDropzone"] p {
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem !important;
+  color: var(--text-muted) !important;
+}
+
+/* ── Buttons ── */
+.stButton > button {
+  background: transparent !important;
+  border: 1px solid var(--accent) !important;
+  color: var(--accent) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  padding: 0.6rem 1.5rem !important;
+  border-radius: 3px !important;
+  transition: all 0.2s ease !important;
+}
+
+.stButton > button:hover {
+  background: var(--accent-dim) !important;
+  box-shadow: 0 0 20px var(--accent-glow) !important;
+}
+
+/* ── Progress Bars ── */
+.stProgress > div > div {
+  background: var(--bg-input) !important;
+  border-radius: 2px !important;
+  height: 3px !important;
+}
+
+.stProgress > div > div > div {
+  background: linear-gradient(90deg, var(--accent), #e8c96a) !important;
+  border-radius: 2px !important;
+}
+
+/* ── Alerts / Success / Warning ── */
+.stSuccess {
+  background: rgba(74, 158, 107, 0.1) !important;
+  border: 1px solid rgba(74, 158, 107, 0.3) !important;
+  border-left: 3px solid var(--success) !important;
+  border-radius: 4px !important;
+  color: #7ecf9e !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.8rem !important;
+}
+
+.stWarning {
+  background: rgba(197, 136, 78, 0.1) !important;
+  border: 1px solid rgba(197, 136, 78, 0.3) !important;
+  border-left: 3px solid var(--warning) !important;
+  border-radius: 4px !important;
+  color: #e8b07a !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.8rem !important;
+}
+
+.stInfo {
+  background: rgba(197, 168, 78, 0.06) !important;
+  border: 1px solid var(--border) !important;
+  border-left: 3px solid var(--accent) !important;
+  border-radius: 4px !important;
+  color: var(--text-secondary) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.8rem !important;
+}
+
+/* ── Prediction Card ── */
+.prediction-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
+  border-radius: 6px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.prediction-card::before {
+  content: 'RESULT';
+  position: absolute;
+  top: -0.6rem;
+  left: 1.5rem;
+  background: var(--bg-card);
+  padding: 0 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+}
+
+.prediction-label {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.prediction-confidence {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+}
+
+/* ── Metrics Grid ── */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric-item {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.metric-value {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--accent);
+}
+
+/* ── Top Predictions List ── */
+.top-prediction-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.top-prediction-row:last-child {
+  border-bottom: none;
+}
+
+.top-prediction-char {
+  color: var(--text-primary);
+  font-weight: 500;
+  min-width: 2rem;
+}
+
+.top-prediction-bar {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  margin: 0 1rem;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.top-prediction-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.top-prediction-pct {
+  color: var(--text-secondary);
+  min-width: 3.5rem;
+  text-align: right;
+}
+
+/* ── Canvas Section ── */
+.canvas-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+/* ── Image display ── */
+[data-testid="stImage"] {
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+}
+
+/* ── Text elements ── */
+p, li {
+  font-family: var(--font-body) !important;
+  color: var(--text-secondary) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+}
+
+strong {
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+}
+
+/* ── Sidebar (if used) ── */
+[data-testid="stSidebar"] {
+  background: var(--bg-secondary) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── Canvas overrides ── */
+canvas {
+  border-radius: 4px !important;
+}

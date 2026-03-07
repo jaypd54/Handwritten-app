@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual Environment
+venv/
+env/
+.env
+.env*
+!.env.example
+
+# TensorFlow / ML
+*.h5
+*.pkl
+*.model
+*.ckpt
+*.pb
+/models/
+/checkpoints/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Data files
+*.csv
+*.json
+*.npy
+*.npz
+/data/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Distribution
+dist/
+build/
+*.egg-info/
