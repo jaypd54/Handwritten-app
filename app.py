@@ -209,6 +209,7 @@ with col_canvas:
         width=300,
         drawing_mode="freedraw",
         key="canvas",
+        return_image_data=True,
     )
 
     if canvas_result.image_data is not None:
